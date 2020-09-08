@@ -1,0 +1,53 @@
+[
+    {
+        "id":1,
+        "name": "Edamame",
+        "price":4.95
+    },
+    {
+        "id":2,
+        "name":"Gyoza",
+        "price":4.95
+    },
+    {
+        "id":3,
+        "name":"Veggie Tempura",
+        "price":6.75
+    },
+    {
+        "id":4,
+        "name":"Shrimp Tempura",
+        "price":9.95
+    },
+    {
+        "id":5,
+        "name":"Chicken Tempura",
+        "price":7.95
+    },
+    {
+        "id":6,
+        "name":"Calamari Tempura",
+        "price":6.75
+    },
+    {
+        "id":7,
+        "name":"Snapper Tempura",
+        "price":7.95
+    },
+    {
+        "id":8,
+        "name":"Fried Soft Shell Crab",
+        "price":8.85
+    },
+    {
+        "id":9,
+        "name":"Chicken Yakitori",
+        "price":7.75
+    },
+    {
+        "id":10,
+        "name":"Seaweed Salad",
+        "price":4.95
+    }
+
+]
