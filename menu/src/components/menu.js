@@ -7,21 +7,27 @@ import items from '../data.json'
 
 const Menu = (props)=> {
 
-const [menuItems,setmenuItems]=useState(items)
-const [order, setorder]=useState([])
+const[checked ,setchecked]=useState(false)
 
-useEffect(()=>{
-    console.log(menuItems)
-})
+
+const addToOrder=(x)=>{
+    if (checked === false){
+        alert (x)
+setchecked(true)
+    }
+    else{
+        alert(`removing ${x} from the order`)
+    }
+}
+
 
  return(
      <InputGroup className="mb-3">
     <InputGroup.Prepend>
-      <InputGroup.Checkbox aria-label="Checkbox for following text input" onChange={()=>{alert(props.name)}} />
+      <InputGroup.Checkbox aria-label="Checkbox for following text input" onChange={()=>{addToOrder(props.name)}} />
      {props.name}     {props.price}
      </InputGroup.Prepend>
-    {/* <FormControl aria-label="Text input with checkbox" /> */}
-  </InputGroup>
+     </InputGroup>
      )   
 }
 
