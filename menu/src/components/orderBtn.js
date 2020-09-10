@@ -1,10 +1,10 @@
-import React, {useState,useEffect,useContext} from 'react';
+import React, {useContext} from 'react';
 import {orderContext} from '../context/order';
 import Button from 'react-bootstrap/Button';
 
 const OrderBtn = ()=> {
 
-    const { order, updateOrder } = useContext(orderContext)
+    const { order} = useContext(orderContext)
 
     const displayOrder =()=>{
         alert(order.split().join().replace(',',' '))

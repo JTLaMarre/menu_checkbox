@@ -4,7 +4,7 @@ export const  orderContext = createContext();
 
 const OrderContextProvider = (props) => {
     
-    const[order, setOrder]=useState([])
+    const[order, setOrder]=useState('')
 
     const updateOrder=(value)=>{
         setOrder(value)
