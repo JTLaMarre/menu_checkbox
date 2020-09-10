@@ -12,7 +12,7 @@ const[checked ,setchecked]=useState(false)
 
 const addToOrder=(x)=>{
     if (checked === false){
-        alert (x)
+        alert (`adding ${x} to the order`)
 setchecked(true)
     }
     else{
