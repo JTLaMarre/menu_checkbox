@@ -1,24 +1,28 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState,useEffect,useContext} from 'react';
 import InputGroup from 'react-bootstrap/InputGroup';
-import FormFile from 'react-bootstrap/FormFile';
-import items from '../data.json'
+import {orderContext} from '../context/order'
 
 
 
 const Menu = (props)=> {
 
 const[checked ,setchecked]=useState(false)
-
+const { order, updateOrder } = useContext(orderContext)
 
 const addToOrder=(x)=>{
     if (checked === false){
-        alert (`adding ${x} to the order`)
-setchecked(true)
+        alert (`adding ${x} to the order`);
+        updateOrder(order + x);
+        setchecked(true)
     }
     else{
-        alert(`removing ${x} from the order`)
+        alert(`removing ${x} from the order`);
+        updateOrder(order.split(x).join(','));
+       setchecked(false)
     }
 }
+
+
 
 
  return(
