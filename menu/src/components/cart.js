@@ -1,15 +1,22 @@
 import React, {useState,useEffect,useContext} from 'react';
 import {cartContext} from '../context/cart ';
 import Badge from 'react-bootstrap/Badge';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 const Cart = ()=> {
 
 const {cart}=useContext(cartContext)
-
+const cartIcon = <FontAwesomeIcon icon={faShoppingCart} size={70} />
     return(
-        <h1>
-       Cart<Badge variant="secondary">{cart}</Badge>
-      </h1>
+        <div>
+        <h3>
+       {cartIcon}
+       <span>
+        <Badge pill variant="danger">{cart}</Badge>
+        </span>
+      </h3>
+        </div>
     )
 }
 

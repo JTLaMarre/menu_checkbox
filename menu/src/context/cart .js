@@ -7,10 +7,10 @@ const CartContextProvider = (props) => {
     const[cart, setCart]=useState(0)
 
     const incrementCart=()=>{
-        setCart(cart++)
+        setCart(cart+1)
     }
     const decrementCart=()=>{
-        setCart(cart--)
+        setCart(cart-1)
     }
 
     return(
