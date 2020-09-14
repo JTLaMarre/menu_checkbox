@@ -1,34 +1,21 @@
-// defines env
+const express = require('express');
 const path = require('path');
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config({
-    path: path.resolve(__dirname, '.env')
-  });
-}
+const generatePassword = require('password-generator');
 
-const express = require('express')
-const app = express()
+const app = express();
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'menu/build')));
+
  
-const PORT = process.env.PORT || 3001;
 
-// static production
-if (process.env.NODE_ENV === 'production') {
-    const clientBuildPath = path.join(__dirname, '..', 'menu', 'build');
-    console.log(`Client build path: ${clientBuildPath}\n`);
-    app.use(express.static(clientBuildPath));
-  }
-
-
-// catch all to serve up react
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../menu_checkbox/menu/build/index.html'));
-  });
+  res.sendFile(path.join(__dirname+'/menu/build/index.html'));
+});
 
+const port = process.env.PORT || 5000;
+app.listen(port);
 
-app.get('/', function (req, res) {
-  res.send('Server working')
-})
- 
-app.listen(PORT, ()=>{
-    console.log(`server listening on ${PORT}`)
-})
+console.log(`,enu component listening on ${port}`);
